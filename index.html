@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Customizador Griffon</title>
+    <meta charset="utf-8" />
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Sonsie+One"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Corinthia&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="calculadora2.css" />
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>Plantas Griffon</h1>
+      <!-- <button id="btn" class="button">
+      <span class="button__text">
+        <span class="button__text-inner"
+          >Visualize a </br>combinação <br/>escolhida</span
+        >
+      </span>
+    </button> -->
+    </div>
+    <div class="total">
+      <!-- <h2>
+        Escolha o ambiente e os itens desejados para visualizar a combinação e o
+        valor
+      </h2>
+      <h2>
+        Não esqueça de salvar suas escolhas, imprimindo a versão final em pdf
+      </h2>
+
+      <p id="output">Valor total</p> -->
+    </div>
+    <div class="seleções">
+      <div class="custom-select" style="width: 200px">
+        <select>
+          <option id="ambiente" value="0">Selecione quartos &#129123;</option>
+          <option id="ambiente" value="7">1S + 2Q</option>
+          <option id="ambiente" value="6">3S</option>
+          <option id="ambiente" value="5">3S + 1Q</option>
+          <option id="ambiente" value="4">4S fit</option>
+          <option id="ambiente" value="3">4S</option>
+          <option id="ambiente" value="2">4S + 1Q</option>
+          <option id="ambiente" value="1">5S</option>
+        </select>
+      </div>
+      <div class="custom-select2" style="width: 200px">
+        <select>
+          <option id="ambiente" value="0">
+            Selecione área social &#129123;
+          </option>
+          <option id="ambiente" value="1">
+            Frente de 18m com depósito e despensa
+          </option>
+          <option id="ambiente" value="2">Frente de 18m com depósito</option>
+          <option id="ambiente" value="3">
+            Frente de 15m com depósito e despensa
+          </option>
+          <option id="ambiente" value="4">
+            Frente de 14m com depósito, ilha e TV divisória
+          </option>
+          <option id="ambiente" value="5">
+            Frente de 14m com depósito e TV divisória
+          </option>
+          <option id="ambiente" value="6">
+            Frente de 14m com depósito e parede cinema
+          </option>
+        </select>
+      </div>
+    </div>
+    <div class="result"></div>
+
+    <div class="container">
+      <div class="custom2">
+        <img id="Sala1" src="1.png" />
+      </div>
+      <div class="custom">
+        <img id="QuartoD" src="D.png" />
+      </div>
+      <div class="form" name="form"></div>
+    </div>
+
+    <script>
+      const selectQuarto = document.querySelector(".custom-select");
+      const selectSala = document.querySelector(".custom-select2");
+
+      selectQuarto.addEventListener("change", (event) => {
+        if (event.target.value == 7) {
+          document.querySelector(".custom").innerHTML =
+            '<img id="QuartoG" src="G.png" />';
+        }
+        if (event.target.value == 6) {
+          document.querySelector(".custom").innerHTML =
+            '<img id="QuartoF" src="F.png" />';
+        }
+        if (event.target.value == 5) {
+          document.querySelector(".custom").innerHTML =
+            '<img id="QuartoE" src="E.png" />';
+        }
+        if (event.target.value == 4) {
+          document.querySelector(".custom").innerHTML =
+            '<img id="QuartoD" src="D.png" />';
+        }
+        if (event.target.value == 3) {
+          document.querySelector(".custom").innerHTML =
+            '<img id="QuartoC" src="C.png" />';
+        }
+        if (event.target.value == 2) {
+          document.querySelector(".custom").innerHTML =
+            '<img id="QuartoB" src="B.png" />';
+        }
+
+        if (event.target.value == 1) {
+          document.querySelector(".custom").innerHTML =
+            '<img id="QuartoA" src="A.png" />';
+        }
+      });
+
+      selectSala.addEventListener("change", (event) => {
+        if (event.target.value == 1) {
+          document.querySelector(".custom2").innerHTML =
+            '<img id="Sala1" src="1.png"/>';
+        }
+        if (event.target.value == 2) {
+          document.querySelector(".custom2").innerHTML =
+            '<img id="Sala2" src="2.png" />';
+        }
+        if (event.target.value == 3) {
+          document.querySelector(".custom2").innerHTML =
+            '<img id="Sala3" src="3.png" />';
+        }
+        if (event.target.value == 4) {
+          document.querySelector(".custom2").innerHTML =
+            '<img id="Sala4" src="4.png" />';
+        }
+        if (event.target.value == 5) {
+          document.querySelector(".custom2").innerHTML =
+            '<img id="Sala5" src="5.png" />';
+        }
+        if (event.target.value == 6) {
+          document.querySelector(".custom2").innerHTML =
+            '<img id="Sala6" src="6.png" />';
+        }
+      });
+
+     </script>
+  </body>
+</html>
