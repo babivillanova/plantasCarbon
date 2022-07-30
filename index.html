@@ -37,42 +37,40 @@
       </h2>
       <h2>
         Não esqueça de salvar suas escolhas, imprimindo a versão final em pdf
-      </h2>
+      </h2>-->
 
-      <p id="output">Valor total</p> -->
+      <p id="output">Valor total:</p>
     </div>
     <div class="seleções">
       <div class="custom-select" style="width: 200px">
         <select>
-          <option id="ambiente" value="0">Selecione quartos &#129123;</option>
-          <option id="ambiente" value="7">1S + 2Q</option>
-          <option id="ambiente" value="6">3S</option>
-          <option id="ambiente" value="5">3S + 1Q</option>
-          <option id="ambiente" value="4">4S fit</option>
-          <option id="ambiente" value="3">4S</option>
-          <option id="ambiente" value="2">4S + 1Q</option>
-          <option id="ambiente" value="1">5S</option>
+          <option id="quartos" value="0">Selecione quartos &#129123;</option>
+          <option id="quartos" value="7">1S + 2Q</option>
+          <option id="quartos" value="6">3S</option>
+          <option id="quartos" value="5">3S + 1Q</option>
+          <option id="quartos" value="4">4S fit</option>
+          <option id="quartos" value="3">4S</option>
+          <option id="quartos" value="2">4S + 1Q</option>
+          <option id="quartos" value="1">5S</option>
         </select>
       </div>
       <div class="custom-select2" style="width: 200px">
         <select>
-          <option id="ambiente" value="0">
-            Selecione área social &#129123;
-          </option>
-          <option id="ambiente" value="1">
+          <option id="sala" value="0">Selecione área social &#129123;</option>
+          <option id="sala" value="1">
             Frente de 18m com depósito e despensa
           </option>
-          <option id="ambiente" value="2">Frente de 18m com depósito</option>
-          <option id="ambiente" value="3">
+          <option id="sala" value="2">Frente de 18m com depósito</option>
+          <option id="sala" value="3">
             Frente de 15m com depósito e despensa
           </option>
-          <option id="ambiente" value="4">
+          <option id="sala" value="4">
             Frente de 14m com depósito, ilha e TV divisória
           </option>
-          <option id="ambiente" value="5">
+          <option id="sala" value="5">
             Frente de 14m com depósito e TV divisória
           </option>
-          <option id="ambiente" value="6">
+          <option id="sala" value="6">
             Frente de 14m com depósito e parede cinema
           </option>
         </select>
@@ -93,8 +91,12 @@
     <script>
       const selectQuarto = document.querySelector(".custom-select");
       const selectSala = document.querySelector(".custom-select2");
+      let valorsala;
+      let valorquarto;
 
       selectQuarto.addEventListener("change", (event) => {
+        const valorquartos = event.target.value;
+        console.log(valorquartos);
         if (event.target.value == 7) {
           document.querySelector(".custom").innerHTML =
             '<img id="QuartoG" src="G.png" />';
@@ -127,6 +129,8 @@
       });
 
       selectSala.addEventListener("change", (event) => {
+        const valorsala = event.target.value;
+
         if (event.target.value == 1) {
           document.querySelector(".custom2").innerHTML =
             '<img id="Sala1" src="1.png"/>';
@@ -152,7 +156,6 @@
             '<img id="Sala6" src="6.png" />';
         }
       });
-
-     </script>
+    </script>
   </body>
 </html>
